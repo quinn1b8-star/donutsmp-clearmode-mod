@@ -1,0 +1,29 @@
+name: Build Mod
+
+on:
+  workflow_dispatch:
+  push:
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Setup Java
+        uses: actions/setup-java@v4
+        with:
+          distribution: temurin
+          java-version: 21
+
+      - name: Build with Gradle
+        uses: gradle/gradle-build-action@v3
+        with:
+          arguments: build
+
+      - name: Upload jar
+        uses: actions/upload-artifact@v4
+        with:
+          name: mod
+          path: build/libs/*.jar

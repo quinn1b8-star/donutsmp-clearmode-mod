@@ -1,0 +1,15 @@
+{
+  "schemaVersion": 1,
+  "id": "donutsmpclearmode",
+  "version": "1.0.0",
+  "name": "DonutSMP Clear Mode",
+  "environment": "client",
+  "entrypoints": {
+    "client": ["com.example.donutsmp.ClientMod"]
+  },
+  "depends": {
+    "fabricloader": ">=0.15.0",
+    "minecraft": "1.21.1",
+    "fabric": "*"
+  }
+}
